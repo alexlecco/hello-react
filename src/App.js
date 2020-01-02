@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Block from './Block';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    user: 'roberto'
+  }
+
+  changeUser(newUser) {
+    this.setState({user: newUser})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Block usuarioActual={this.state.user} />
+          <button onClick={() => this.changeUser("Celso")}>cambiar estado</button>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
