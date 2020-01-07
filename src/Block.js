@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 class Block extends Component {
   render() {
+    let { name, age } = this.props.user;
+
     return(
       <div>
-        <p>Hola {this.props.name}</p>
-        <p>Edad: {this.props.age}</p>
+        <p>Hola {name}</p>
+        <p>Edad: {age}</p>
       </div>
     )
   }

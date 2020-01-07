@@ -22,14 +22,13 @@ class App extends Component {
   }
 
   render() {
-    let name = this.state.user.name;
-    let age = this.state.user.age;
+    let { user } = this.state;
 
     return (
       <div className="App">
         <header className="App-header">
 
-          <Block name={name} age={age} />
+          <Block user={user} />
 
           <button onClick={() => this.changeUser("Roberto")}>cambiar usuario</button>
           <button onClick={() => this.grow()}>sumar edad</button>
