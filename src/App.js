@@ -3,22 +3,24 @@ import './App.css';
 import Block from './Block';
 
 class App extends Component {
-  state = {
-    user: {
-      name: 'Benja',
-      age: 29
+  constructor() {
+    super()
+    this.state = {
+      user: {
+        name: 'Benja',
+        age: 29
+      }
     }
   }
-
+  
   changeUser(newName) {
     let currentAge = this.state.user.age;
     this.setState({user: {name: newName, age: currentAge}})
   }
-
+  
   grow() {
-    let currentAge = this.state.user.age;
-    let currentName = this.state.user.name;
-    this.setState({user: {name: currentName,age: currentAge + 1}})
+    let { name, age }  = this.state.user;
+    this.setState({user: {name: name, age: age + 1}})
   }
 
   render() {
