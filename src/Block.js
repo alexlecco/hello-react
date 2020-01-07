@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Block extends React.Component {
+class Block extends Component {
   render() {
     return(
-      <p>Hola {this.props.usuarioActual}</p>
+      <div>
+        <p>Hola {this.props.name}</p>
+        <p>Edad: {this.props.age}</p>
+      </div>
     )
   }
 }
+
+export default Block;
